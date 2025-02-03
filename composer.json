@@ -1,0 +1,19 @@
+{
+    "name": "jonassilva90/loteria",
+    "description": "Loteria",
+    "autoload": {
+        "psr-4": {
+            "Loteria\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jonas Silva",
+            "email": "jonasribeiro19@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.8",
+        "jonassilva/klein": "^2.1"
+    }
+}

@@ -1,0 +1,24 @@
+# Utilize a imagem oficial do PHP 8.2 com Apache
+FROM php:8.2-apache
+
+# Defina o diretório de trabalho
+WORKDIR /var/www/html
+
+# Copie os arquivos do projeto para o container
+COPY . /var/www/html/
+
+# Instale as dependências do Composer
+RUN composer install --no-dev --prefer-dist
+
+# Exponha a porta 8080
+EXPOSE 8080
+
+# Defina a porta 8080 como a porta de escuta do Apache
+ENV APACHE_LISTEN_PORT 8080
+
+# Atualize o arquivo de configuração do Apache para usar a porta 8080
+RUN sed -i 's/80/8080/g' /etc/apache2/ports.conf
+RUN sed -i 's/80/8080/g' /etc/apache2/sites-available/000-default.conf
+
+# Inicie o Apache quando o container for iniciado
+CMD ["apache2-foreground"]
