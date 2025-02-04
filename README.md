@@ -8,14 +8,14 @@ docker build -t loteria .
 # rode o projeto
 
 ```sh
-docker run -p 8080:8080 loteria
+docker run -p 8080:80 loteria
 ```
 
 # Acesse via
 
 http://localhost:8080
 
-# Em ambiente de teste pode executar pelo php
+# Em ambiente de desenvolvimento pode executar pelo php
 
 # antes deve rodar o composer install:
 
